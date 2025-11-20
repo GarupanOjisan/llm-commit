@@ -4,7 +4,19 @@
 
 ## Installation
 
-*(Coming Soon)*
+### Prerequisites
+- Python 3.14 or higher
+- Git
+
+### Install via Script
+```bash
+./install.sh
+```
+
+### Manual Installation
+```bash
+pip install .
+```
 
 ## Configuration
 
