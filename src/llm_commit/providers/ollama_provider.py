@@ -11,6 +11,9 @@ class OllamaProvider(LLMProvider):
     """
     # pylint: disable=too-few-public-methods
     def __init__(self, base_url: str = "http://localhost:11434", model: str = "llama3"):
+        """
+        Initializes the Ollama provider.
+        """
         self.base_url = base_url
         self.model = model
 

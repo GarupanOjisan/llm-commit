@@ -11,6 +11,9 @@ class OpenAIProvider(LLMProvider):
     """
     # pylint: disable=too-few-public-methods
     def __init__(self, api_key: str, model: str = "gpt-4o"):
+        """
+        Initializes the OpenAI provider.
+        """
         self.client = OpenAI(api_key=api_key)
         self.model = model
 

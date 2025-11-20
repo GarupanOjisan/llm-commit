@@ -11,6 +11,9 @@ class GeminiProvider(LLMProvider):
     """
     # pylint: disable=too-few-public-methods
     def __init__(self, api_key: str, model: str = "gemini-1.5-pro"):
+        """
+        Initializes the Gemini provider.
+        """
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel(model)
 
