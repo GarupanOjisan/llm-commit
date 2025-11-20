@@ -1,7 +1,13 @@
+"""
+Git client module for handling git operations.
+"""
 import subprocess
-from typing import Optional
+
 
 class GitClient:
+    """
+    A client for executing git commands.
+    """
     def is_inside_work_tree(self) -> bool:
         """Checks if the current directory is inside a git working tree."""
         try:
@@ -26,7 +32,7 @@ class GitClient:
             )
             return result.stdout
         except subprocess.CalledProcessError as e:
-            raise RuntimeError(f"Failed to get git diff: {e.stderr}")
+            raise RuntimeError(f"Failed to get git diff: {e.stderr}") from e
 
     def commit(self, message: str) -> None:
         """Commits the staged changes with the given message."""
@@ -36,4 +42,4 @@ class GitClient:
                 check=True
             )
         except subprocess.CalledProcessError as e:
-            raise RuntimeError(f"Failed to commit: {e}")
+            raise RuntimeError(f"Failed to commit: {e}") from e
