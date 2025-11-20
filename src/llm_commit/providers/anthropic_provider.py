@@ -1,7 +1,15 @@
+"""
+Anthropic provider implementation.
+"""
 from anthropic import Anthropic
 from ..llm_provider import LLMProvider
 
+
 class AnthropicProvider(LLMProvider):
+    """
+    Provider for Anthropic API.
+    """
+    # pylint: disable=too-few-public-methods
     def __init__(self, api_key: str, model: str = "claude-3-5-sonnet-20240620"):
         self.client = Anthropic(api_key=api_key)
         self.model = model
@@ -17,4 +25,4 @@ class AnthropicProvider(LLMProvider):
             )
             return message.content[0].text.strip()
         except Exception as e:
-            raise RuntimeError(f"Anthropic API Error: {e}")
+            raise RuntimeError(f"Anthropic API Error: {e}") from e
