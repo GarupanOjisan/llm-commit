@@ -7,7 +7,7 @@ class LlmCommit < Formula
   sha256 "REPLACE_WITH_SHA256_OF_TARBALL"
   license "MIT"
 
-  depends_on "python@3.14"
+  depends_on "python@3.12"
 
   def install
     virtualenv_install_with_resources
