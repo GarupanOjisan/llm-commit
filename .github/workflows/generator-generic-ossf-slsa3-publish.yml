@@ -22,7 +22,7 @@ jobs:
     permissions:
       contents: write # Needed to upload assets to the release
     outputs:
-      digests: ${{ steps.hash.outputs.digests }}
+      digests: ${{ steps.hash.outputs.hashes }}
 
     steps:
       - uses: actions/checkout@v4
